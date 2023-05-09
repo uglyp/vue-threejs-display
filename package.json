@@ -1,0 +1,83 @@
+{
+  "name": "vue-threejs-display",
+  "version": "1.0.5",
+  "packageManager": "pnpm@7.18.0",
+  "description": "基于 Vue + Three.js 的 3D展示组件",
+  "author": "uglyp",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "3d",
+    "threeJS",
+    "3d viewer",
+    "vue 3d"
+  ],
+  "exports": {
+    "./vue3": {
+      "types": "./vue3/types/index.d.ts",
+      "import": "./vue3/vue-threejs-display.esm.js",
+      "node": "./vue3/vue-threejs-display.cjs.js",
+      "default": "./vue3/vue-threejs-display.global.js"
+    }
+  },
+  "files": [
+    "vue3"
+  ],
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build",
+    "docs:dev": "pnpm run --filter docs dev",
+    "docs:build": "gulp docs_build",
+    "docs:preview": "pnpm run --filter docs serve",
+    "vue3:build": "pnpm run -r --filter=./packages/vue3 build",
+    "test": "vitest",
+    "test:node": "pnpm run --filter=playground dev",
+    "test:ui": "vitest --ui",
+    "build:entry": "esno ./scripts/build-entry.ts",
+    "build:docs": "esno ./scripts/build-docs.ts",
+    "gen-info": "esno ./scripts/gen-info.ts",
+    "release": "gulp release",
+    "commit": "git-cz",
+    "new": "esno ./scripts/create-hook.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@flypeng/eslint-config": "^0.0.9",
+    "@rollup/plugin-terser": "^0.4.1",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^18.16.5",
+    "@vitest/ui": "^0.28.5",
+    "chalk": "^5.2.0",
+    "commitizen": "^4.3.0",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.40.0",
+    "esno": "^0.16.3",
+    "gulp": "^4.0.2",
+    "husky": "^8.0.3",
+    "inquirer": "^9.2.2",
+    "lint-staged": "^13.2.2",
+    "rollup": "^3.21.5",
+    "rollup-plugin-dts": "^5.3.0",
+    "standard-version": "^9.5.0",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.3.5",
+    "vitest": "^0.28.5"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts}": [
+      "prettier --write",
+      "eslint"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
