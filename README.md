@@ -6,5 +6,5 @@ pnpm install vue-threejs-display
 ## 🎉 Usage
 
 ```ts
-import { vueThreejsDisplay } from 'vue-threejs-display/vue3'
+import { vueThreejsDisplay } from 'vue-threejs-display/vue3' 
 ```

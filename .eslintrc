@@ -1,5 +1,5 @@
 {
-	"extends": "@flypeng",
+	"extends": "@antfu",
 	"globals": {
 		"NodeJS": true
 	},
