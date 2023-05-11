@@ -4,8 +4,8 @@
       <div class="text">This text is on the back of the model</div>
       <div class="model">
         <vueThreejsDisplay
-          filePath="/vue-threejs-display/models/gltf/DamagedHelmet.gltf"
-          :backgroundColor="'#00ffff'"
+          filePath="/vue-threejs-display/models/gltfs/bmw/scene.gltf"
+          :backgroundColor="'#000fff'"
           :backgroundAlpha="0.5"
           :height="600"
           :width="600"

@@ -23,7 +23,7 @@
       </button>
     </div>
     <vueThreejsDisplay
-      :filePath="'/models/collada/elf/elf.dae'"
+      :filePath="'/vue-threejs-display/models/collada/female/model.dae'"
       :controlsOptions="{
         enablePan,
         enableZoom,
@@ -44,7 +44,7 @@ const enableRotate = ref(true);
 </script>
 <style scoped>
 .controls {
-  height: 600px;
+  height: 400px;
 }
 .buttons {
   padding: 10px;
@@ -64,4 +64,5 @@ button:hover {
   color: rgb(12, 54, 240);
 }
 </style>
+
 ```

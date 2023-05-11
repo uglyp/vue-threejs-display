@@ -9,10 +9,19 @@
 ```vue
 <template>
   <vueThreejsDisplay
-    filePath="/models/collada/elf/elf.dae"
-    :lights="lights"
+    filePath="/vue-threejs-display/models/gltfs/fishingTown/scene.gltf"
     :cameraPosition="{ x: 0, y: 10, z: 10 }"
+    :height="650"
+    backgroundColor="#F2F2F2"
   />
+	<h1>添加灯光</h1>
+	<vueThreejsDisplay
+	    filePath="/vue-threejs-display/models/gltfs/fishingTown/scene.gltf"
+	    :lights="lights"
+	    :cameraPosition="{ x: 0, y: 10, z: 10 }"
+	    :height="650"
+	    backgroundColor="#F2F2F2"
+	  />
 </template>
 <script setup>
 import { ref } from "vue";
@@ -41,6 +50,6 @@ lights.value = [
     groundColor: "#000000",
     position: { x: 200, y: -200, z: 100 },
   },
-];
+]
 </script>
 ```

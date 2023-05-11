@@ -10,9 +10,10 @@
 ```vue
 <template>
   <vueThreejsDisplay
-    filePath="/models/collada/stormtrooper/stormtrooper.dae"
-    :cameraPosition="{ x: 1, y: -5, z: -20 }"
-    :height="350"
+    filePath="/vue-threejs-display/models/gltfs/violet/scene.gltf"
+    :cameraPosition="{ x: 0, y: 0, z: 0 }"
+    :height="450"
+    backgroundColor="#F2F2F2"
   />
 </template>
 <script setup>

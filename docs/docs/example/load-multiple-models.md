@@ -1,4 +1,4 @@
-# 加载多个模型并单独设置模型位置
+# 加载多个模型并单独设置模型位置 
 
 <LoadMultipleModels/>
 
@@ -17,24 +17,24 @@
     :position="position"
     :rotation="rotation"
     :scale="scale"
-    :cameraPosition="{ x: -0, y: 0, z: -500 }"
+    :cameraPosition="{ x: -0, y: 0, z: -500 }" 
     :height="350"
   />
 </template>
 <script setup>
-import { vueThreejsDisplay } from "vue-threejs-display/vue3";
-import { ref } from "vue";
+import { vueThreejsDisplay } from "vue-threejs-display/vue3"
+import { ref } from "vue"
 const filePath = ref();
 filePath.value = [
   "/models/fbx/Samba Dancing.fbx",
   "/models/collada/pump/pump.dae",
 ];
-const position = ref();
+const position = ref()
 position.value = [
   { x: 0, y: 0, z: 0 },
   { x: 100, y: 100, z: 100 },
 ];
-const rotation = ref();
+const rotation = ref()
 rotation.value = [
   { x: 0, y: 0, z: 0 },
   { x: 10, y: 1, z: 1 },
@@ -54,7 +54,7 @@ function change(event: any, type: string) {
             { x: 0, y: 0, z: 0 },
             { x: 100, y: 100, z: 100 },
           ])
-        : (position.value = []);
+        : (position.value = [])
       break;
     case "rotation":
       value
@@ -62,7 +62,7 @@ function change(event: any, type: string) {
             { x: 0, y: 0, z: 0 },
             { x: 10, y: 1, z: 1 },
           ])
-        : (rotation.value = []);
+        : (rotation.value = [])
       break;
     case "scale":
       value
@@ -70,7 +70,7 @@ function change(event: any, type: string) {
             { x: 0.4, y: 0.4, z: 0.4 },
             { x: 0.8, y: 0.8, z: 0.8 },
           ])
-        : (scale.value = []);
+        : (scale.value = [])
       break;
   }
 }

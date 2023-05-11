@@ -15,7 +15,7 @@
       </button>
     </div>
     <vueThreejsDisplay
-      :filePath="'/vue-threejs-display/models/collada/elf/elf.dae'"
+      :filePath="'/vue-threejs-display/models/collada/female/model.dae'"
       :controlsOptions="{
         enablePan,
         enableZoom,

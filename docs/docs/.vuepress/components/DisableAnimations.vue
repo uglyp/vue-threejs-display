@@ -4,10 +4,10 @@
     {{ autoPlay ? "Play" : "Stop" }}
   </div>
   <vueThreejsDisplay
-    filePath="/vue-threejs-display/models/collada/stormtrooper/stormtrooper.dae"
-    :cameraPosition="{ x: 20, y: 0, z: -10 }"
+    filePath="/vue-threejs-display/models/gltfs/airi/scene.gltf"
+    :cameraPosition="{ x: 0, y: 0, z: 0 }"
     :autoPlay="autoPlay"
-    :height="350"
+    :height="750"
     backgroundColor="#F2F2F2"
   />
 </template>

@@ -20,8 +20,8 @@
     </div>
     <vueThreejsDisplay
       v-if="!refresh"
-      filePath="/vue-threejs-display/models/collada/stormtrooper/stormtrooper.dae"
-      :scale="{ x: 0.1, y: 0.1, z: 0.1 }"
+      filePath="/vue-threejs-display/models/gltfs/telannas/scene.gltf"
+      :scale="{ x: 0.5, y: 0.5, z: 0.5 }"
       :verticalCtrl="verticalCtrl"
       :horizontalCtrl="horizontalCtrl"
       :height="500"

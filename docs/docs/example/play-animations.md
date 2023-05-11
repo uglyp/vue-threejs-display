@@ -4,15 +4,15 @@
 
 ```vue
 <template>
-  <div class="check-box">
+  <div class="check-box-s">
     <input type="checkbox" @change="change()" checked />
     {{ autoPlay ? "Play" : "Stop" }}
   </div>
   <vueThreejsDisplay
-    filePath="/models/collada/stormtrooper/stormtrooper.dae"
-    :cameraPosition="{ x: 20, y: 0, z: -10 }"
+    filePath="/vue-threejs-display/models/gltfs/airi/scene.gltf"
+    :cameraPosition="{ x: 0, y: 0, z: 0 }"
     :autoPlay="autoPlay"
-    :height="350"
+    :height="750"
     backgroundColor="#F2F2F2"
   />
 </template>
@@ -29,7 +29,7 @@ function change() {
 }
 </script>
 <style>
-.check-box {
+.check-box-s {
   background-color: rgb(13, 6, 103);
   padding: 5px 4px;
   z-index: 100;
