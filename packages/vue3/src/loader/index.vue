@@ -66,7 +66,7 @@ type plyMaterial = 'MeshBasicMaterial' | 'MeshStandardMaterial';
 type encode = 'linear' | 'sRGB';
 interface Props {
   filePath: string | string[];
-  // file type is the 3d model(s) file extension, is used for filePath(remote url) without file name extensions
+  // 当filePath的路径没有扩展名时，使用fileType指定文件格式扩展名
   fileType?: string | string[];
   width?: number;
   height?: number;
@@ -135,7 +135,7 @@ const props = withDefaults(defineProps<Props>(), {
   plyMaterial: 'MeshStandardMaterial',
 })
 
-// Non responsive variable
+// 非响应式变量
 let object: any = null
 const raycaster = new Raycaster()
 const mouse = new Vector2()
@@ -152,7 +152,7 @@ let stats: any = null
 let mixers: AnimationMixer | AnimationMixer[] = null as any
 let textureLoader: any = null
 
-// responsive variable
+// 响应式变量
 const size = ref({ width: props.width || 0, height: props.height || 0 })
 const loaderIndex = ref(0)
 const objectPositionHasSet = ref(false)
@@ -193,7 +193,6 @@ watch(
   },
 )
 
-// deep watch
 watch(
   [
     () => props.rotation,
@@ -271,7 +270,6 @@ const emit = defineEmits([
   'error',
 ])
 
-// Dynamic reload filePath
 function resetScene() {
   destroyScene()
   init()
@@ -316,7 +314,7 @@ function init() {
   }
   const el: any = containerElement.value
   setContainerElementStyle(el)
-  // init canvas width and height
+  // 初始化宽高
   onResize()
   const WEB_GL_OPTIONS = { antialias: true, alpha: true }
   const options: WebGLRendererParameters = {
@@ -349,14 +347,13 @@ function init() {
 
   loadModelSelect()
   update()
-  // enable mouse move
+  // 开启鼠标移动事件
   enableMousemoveEvent(true)
   el.addEventListener('mousedown', onMouseDown, false)
   el.addEventListener('mouseup', onMouseUp, false)
   el.addEventListener('click', onClick, false)
   el.addEventListener('dblclick', onDblclick, false)
   window.addEventListener('resize', onResize, false)
-  // stats
   if (showFps) {
     stats = Stats()
     el.appendChild(stats.dom)
@@ -373,7 +370,7 @@ function setContainerElementStyle(el: any) {
     el.style.height = `${height}px`
   }
 }
-// mouse move event listener
+// 监听鼠标移动事件
 function enableMousemoveEvent(enable: boolean) {
   const el: any = containerElement.value
   if (enable) {
@@ -574,7 +571,6 @@ function updateControls() {
 }
 function loadModelSelect() {
   const { filePath, parallelLoad } = props
-  // If enable parallel load
   if (parallelLoad && isMultipleModels) {
     (filePath as any).forEach((path: string, index: number) => {
       load(index)
@@ -596,7 +592,7 @@ function load(fileIndex?: number) {
   } = props
   if (!filePath) return
   const index = fileIndex || loaderIndex.value
-  // if multiple files
+  // 多文件
   const filePathString: any = !isMultipleModels.value
     ? filePath
     : filePath[index]
@@ -623,13 +619,13 @@ function load(fileIndex?: number) {
     loader.setCrossOrigin(crossOrigin)
   }
   if (mtlPath) {
-    // load materials
+    // 加载 materials
     const isMultipleMTL = typeof mtlPath === 'object'
     if (!isMultipleMTL) {
-      // single material
+      // 单个 material
       loadMtl(filePathString, getObjectFun, index)
     } else {
-      // load materials and model
+      // 加载 materials 和 model
       if (!mtlPath[index]) {
         loadFilePath(filePathString, getObjectFun, index)
         return
@@ -637,7 +633,7 @@ function load(fileIndex?: number) {
       loadMtl(filePathString, getObjectFun, index)
     }
   } else {
-    // don't load materials
+    // 不加载 materials
     loadFilePath(filePathString, getObjectFun, index)
   }
 }
@@ -649,7 +645,7 @@ function loadFilePath(filePath: string, getObject: any, index: number) {
       const obj = getObject(...args)
       object = obj
       addObject(object, filePath)
-      // set texture
+      // 纹理
       if (textureImage) {
         const _texture = typeof textureImage === 'string' ? textureImage : textureImage[index]
         if (_texture) {
@@ -700,7 +696,7 @@ function addObject(obj: Object3D, filePath: string) {
     objectPositionHasSet.value = true
   }
   object = obj
-  // add the file name to object
+  // 添加文件名
   let fileName: any = filePath.split('/')
   fileName = fileName[fileName.length - 1]
   object.fileName = fileName
@@ -713,7 +709,7 @@ function animate() {
   requestAnimationId = requestAnimationFrame(animate)
   updateStats()
   const delta = clock.getDelta()
-  // update play animations
+  // 开启动画
   if (mixers && mixers instanceof AnimationMixer) {
     mixers.update(delta)
   }
@@ -741,7 +737,6 @@ function onProcess(xhr: ProgressEvent) {
   const process = Math.floor((xhr.loaded / xhr.total) * 100)
   if (process === 100) {
     if (isMultipleModels.value && filePath.length > loaderIndex.value) {
-      // Load completed
       nextTick(() => {
         loaderIndex.value++
         if (loaderIndex.value === filePath.length) {
@@ -893,12 +888,9 @@ function generateCanvas(text: string, style: any) {
   const context = canvas.getContext('2d')
   if (context) {
     context.font = `${fontWeight} ${fontSize}px ${fontFamily}`
-    // get size data (height depends only on font size)
     const metrics = context.measureText(text)
     const textWidth = metrics.width
-    // background color
     context.fillStyle = backgroundColor
-    // border color
     context.strokeStyle = borderColor
     context.lineWidth = borderWidth
     roundRect(
@@ -909,13 +901,12 @@ function generateCanvas(text: string, style: any) {
       fontSize * 1.4 + borderWidth,
       borderRadius,
     )
-    // text color
     context.fillStyle = fontColor
     context.fillText(text, borderWidth, fontSize + borderWidth)
   }
   return canvas
 }
-// Get object index
+// 获取下标
 function getObjectIndex(object: any) {
   const { filePath } = props
   let objIndex: any
@@ -931,7 +922,7 @@ function getObjectIndex(object: any) {
   }
   return objIndex
 }
-// play animations
+// 播放动画
 function playAnimations() {
   const { autoPlay } = props
   const obj = getAllObject()
@@ -942,7 +933,7 @@ function playAnimations() {
   }
   playSingleModel(obj)
 }
-// play a single model animation
+// 播放单模型动画
 function playSingleModel(item: Object3D) {
   const { autoPlay } = props
   mixers = new AnimationMixer(item)
@@ -959,7 +950,7 @@ function playSingleModel(item: Object3D) {
     })
   }
 }
-// play multiple models animation
+// 播放多模型动画
 function playMultipleModels(obj: Object3D) {
   const { autoPlay } = props
   mixers = []
@@ -979,29 +970,24 @@ function playMultipleModels(obj: Object3D) {
     }
   })
 }
-// set vertical horizontal controls
 function setVerticalHorizontalControls() {
   if (!controls) {
     return
   }
   const { verticalCtrl, horizontalCtrl } = props
-  // set vertical
   if (verticalCtrl && typeof verticalCtrl === 'boolean') {
     controls.minAzimuthAngle = -2 * Math.PI
     controls.maxAzimuthAngle = -2 * Math.PI
   }
   if (verticalCtrl && typeof verticalCtrl === 'object') {
-    // min/max azimuth angle value range [-2 * Math.PI，2 * Math.PI]
     controls.minAzimuthAngle = verticalCtrl.min
     controls.maxAzimuthAngle = verticalCtrl.max
   }
-  // set horizontal
   if (horizontalCtrl && typeof horizontalCtrl === 'boolean') {
     controls.minPolarAngle = 1
     controls.maxPolarAngle = 1
   }
   if (horizontalCtrl && typeof horizontalCtrl === 'object') {
-    // min/max azimuth angle value range [0，Math.PI]
     controls.minPolarAngle = horizontalCtrl.min
     controls.maxPolarAngle = horizontalCtrl.max
   }

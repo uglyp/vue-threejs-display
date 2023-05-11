@@ -13,7 +13,7 @@ exports.build = async () => {
 }
 
 exports.docs_dev = async () => {
-  await execSync('pnpm run -r --filter=./docs dev', { stdio: 'inherit' })
+  await execSync('pnpm run -r --filter docs dev', { stdio: 'inherit' })
 }
 
 exports.docs_build = async () => {

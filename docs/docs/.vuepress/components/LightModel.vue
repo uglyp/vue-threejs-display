@@ -7,7 +7,7 @@
     backgroundColor="#F2F2F2"
   />
 </template>
-<script setup >
+<script setup>
 import { ref } from "vue";
 import { vueThreejsDisplay } from "vue-threejs-display/vue3";
 const lights = ref();

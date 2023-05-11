@@ -45,24 +45,24 @@ function getExtension(str: string) {
   return extension
 }
 
-// auto select model loader
+// 根据扩展名区分选择不同的loader
 function getLoader(filePath: string, fileType: string, isDraco: boolean, plyMaterial: string, dracoDir?: string) {
   let fileExtension: string
   if (fileType) {
-    // Custom file extension
+    // 自定义文件扩展名
     fileExtension = fileType
   } else {
-    // Get file extension
+    // 获取文件扩展名
     fileExtension = getExtension(filePath)
   }
-  // gltf type has two formats, .gltf and .glb, so make fileExtension glb to gltf
+  // gltf类型有两种格式，.gltf和.glb，所以将fileExtension=glb时改为gltf
   if (fileExtension === 'glb') {
     fileExtension = 'gltf'
   }
   let obj: loaderObj = {
     loader: null,
     getObject: null,
-  } // obj {loader, getObject}
+  }
   switch (fileExtension) {
     case 'dae':
       obj = {
@@ -80,7 +80,7 @@ function getLoader(filePath: string, fileType: string, isDraco: boolean, plyMate
         loader: new GLTFLoader(manager),
         getObject: (gltf: any) => {
           const object = gltf.scene
-          // resolve gltf animations lose
+          // 解决动画丢失
           if (gltf.animations) {
             object.animations = gltf.animations
           }
@@ -97,9 +97,9 @@ function getLoader(filePath: string, fileType: string, isDraco: boolean, plyMate
     case 'ply':
       obj = {
         loader: new PLYLoader(manager),
-        getObject: (geometry: any) => { // geometry
+        getObject: (geometry: any) => {
           geometry.computeVertexNormals()
-          // Set ply model material
+          // 设置模型材料
           // eslint-disable-next-line max-len
           return new Mesh(geometry, plyMaterial === 'MeshStandardMaterial' ? new MeshStandardMaterial() : new MeshBasicMaterial({ vertexColors: true }))
         },
@@ -108,7 +108,7 @@ function getLoader(filePath: string, fileType: string, isDraco: boolean, plyMate
     case 'stl':
       obj = {
         loader: new STLLoader(manager),
-        getObject: (geometry: any) => // geometry
+        getObject: (geometry: any) =>
           // eslint-disable-next-line implicit-arrow-linebreak
           new Mesh(geometry, new MeshPhongMaterial())
         ,

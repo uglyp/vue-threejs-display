@@ -27,7 +27,7 @@
     />
   </div>
 </template>
-<script setup >
+<script setup>
 import { vueThreejsDisplay } from "vue-threejs-display/vue3";
 import { ref } from "vue";
 const enablePan = ref(true);

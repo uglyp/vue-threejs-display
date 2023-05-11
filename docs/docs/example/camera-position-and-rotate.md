@@ -7,16 +7,16 @@
   <vueThreejsDisplay
     filePath="/models/stl/colored.stl"
     @load="onLoad"
-    :cameraPosition="positon"
+    :cameraPosition="position"
     :cameraRotation="rotation"
   />
 </template>
 <script setup>
 import { vueThreejsDisplay } from "vue-threejs-display/vue3";
 import { ref } from "vue";
-const positon = ref();
+const position = ref();
 const rotation = ref();
-positon.value = {
+position.value = {
   x: -Math.PI / 2,
   y: 0,
   z: 0,
@@ -33,7 +33,7 @@ function onLoad() {
 function rotate() {
   requestAnimationFrame(rotate);
   rotation.value.z += 0.01;
-  positon.value.z += 0.01;
+  position.value.z += 0.01;
 }
 </script>
 ```

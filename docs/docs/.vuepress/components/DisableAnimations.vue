@@ -11,7 +11,7 @@
     backgroundColor="#F2F2F2"
   />
 </template>
-<script setup >
+<script setup>
 import { vueThreejsDisplay } from "vue-threejs-display/vue3";
 import { ref } from "vue";
 const autoPlay = ref(true);

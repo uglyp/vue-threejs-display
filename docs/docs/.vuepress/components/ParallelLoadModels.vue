@@ -10,7 +10,7 @@
     backgroundColor="#F2F2F2"
   ></vueThreejsDisplay>
 </template>
-<script setup >
+<script setup>
 import { vueThreejsDisplay } from "vue-threejs-display/vue3";
 import { ref } from "vue";
 const filePath = ref();

@@ -10,7 +10,6 @@
 </template>
 <script setup>
 import { vueThreejsDisplay } from "vue-threejs-display/vue3";
-// import { vueThreejsDisplay } from "vue-threejs-display/vue3";
 import { ref } from "vue";
 const rotation = ref();
 rotation.value = {

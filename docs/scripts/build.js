@@ -1,6 +1,6 @@
 const { spawn } = require('child_process');
 
-let syncFile = spawn('powershell.exe', ['rd -r ./html;', 'mkdir ./html;', 'move ./docs/.vuepress/dist/* ./html;']);
+let syncFile = spawn('powershell.exe', ['rd -r ./html;', 'mkdir ./html;', 'move ./docs/docs/.vuepress/dist/* ./html;']);
 syncFile.stdout.on('data', (data) => {
   console.log(`stdout: ${data}`);
 });

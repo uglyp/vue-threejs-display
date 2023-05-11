@@ -19,7 +19,7 @@
       </button>
     </div>
     <vueThreejsDisplay
-      v-if="!refersh"
+      v-if="!refresh"
       filePath="/vue-threejs-display/models/collada/stormtrooper/stormtrooper.dae"
       :scale="{ x: 0.1, y: 0.1, z: 0.1 }"
       :verticalCtrl="verticalCtrl"
@@ -33,7 +33,7 @@ import { vueThreejsDisplay } from "vue-threejs-display/vue3";
 import { nextTick, ref } from "vue";
 const verticalCtrl = ref(false);
 const horizontalCtrl = ref(false);
-const refersh = ref(false);
+const refresh = ref(false);
 
 function setVertical(type) {
   horizontalCtrl.value = false;
@@ -44,7 +44,7 @@ function setVertical(type) {
     verticalCtrl.value = true;
     // horizontalCtrl.value = { min: 0, max: Math.PI };
   }
-  refersh3d();
+  refresh3d();
 }
 
 function setHorizontal(type) {
@@ -57,13 +57,13 @@ function setHorizontal(type) {
     console.log(horizontalCtrl.value);
     // verticalCtrl.value = { min: -Math.PI, max: Math.PI };
   }
-  refersh3d();
+  refresh3d();
 }
 
-function refersh3d() {
-  refersh.value = true;
+function refresh3d() {
+  refresh.value = true;
   nextTick(() => {
-    refersh.value = false;
+    refresh.value = false;
   });
 }
 </script>
