@@ -1,4 +1,4 @@
-const { execSync } = require('child_process')
+const { execSync } = require('node:child_process')
 
 exports.dev = async () => {
   await execSync('cross-env NODE_ENV=dev rollup --config rollup.config.ts --configPlugin typescript --watch', {
