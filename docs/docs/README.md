@@ -17,7 +17,7 @@ actions:
 
 ```bash
 # 在你的项目中安装
-pnpm install vue-threejs-display/vue3
+pnpm install vue-threejs-display
 ```
 
   </CodeGroupItem>
@@ -25,7 +25,7 @@ pnpm install vue-threejs-display/vue3
 
 ```bash
 # 在你的项目中安装
-npm install vue-threejs-display/vue3
+npm install vue-threejs-display
 ```
 
   </CodeGroupItem>
@@ -35,7 +35,7 @@ npm install vue-threejs-display/vue3
 
 ```bash
 # 在你的项目中安装
-yarn add vue-threejs-display/vue3
+yarn add vue-threejs-display
 ```
 
   </CodeGroupItem>
