@@ -10,8 +10,6 @@ actions:
 ---
 
 
-<RotateNaixiaodong/>
-
 ### Install
 
 <CodeGroup>
@@ -43,3 +41,12 @@ yarn add vue-threejs-display/vue3
   </CodeGroupItem>
 
 </CodeGroup>
+
+
+### 艾黎
+<DisableAnimations/>
+
+
+
+### 耐小冬
+<RotateNaixiaodong/>

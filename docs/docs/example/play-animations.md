@@ -30,7 +30,7 @@ function change() {
 </script>
 <style>
 .check-box-s {
-  background-color: rgb(13, 6, 103);
+  background-color: var(--c-brand);
   padding: 5px 4px;
   z-index: 100;
   font-size: 12px;

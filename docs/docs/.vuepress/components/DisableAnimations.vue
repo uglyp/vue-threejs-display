@@ -7,7 +7,7 @@
     filePath="/vue-threejs-display/models/gltfs/airi/scene.gltf"
     :cameraPosition="{ x: 0, y: 0, z: 0 }"
     :autoPlay="autoPlay"
-    :height="750"
+    :height="650"
     backgroundColor="#F2F2F2"
   />
 </template>
@@ -25,7 +25,7 @@ function change() {
 </script>
 <style>
 .check-box-s {
-  background-color: rgb(13, 6, 103);
+  background-color: var(--c-brand);
   padding: 5px 4px;
   z-index: 100;
   font-size: 12px;
