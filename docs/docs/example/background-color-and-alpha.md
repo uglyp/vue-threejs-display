@@ -9,7 +9,7 @@
       <div class="text">This text is on the back of the model</div>
       <div class="model">
         <vueThreejsDisplay
-          filePath="/vue-threejs-display/models/gltfs/bmw/scene.gltf"
+          filePath="/models/gltfs/bmw/scene.gltf"
           :backgroundColor="'#000fff'"
           :backgroundAlpha="0.5"
           :height="600"

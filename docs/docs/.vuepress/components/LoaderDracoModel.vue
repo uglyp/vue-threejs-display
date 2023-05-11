@@ -1,6 +1,6 @@
 <template>
   <vueThreejsDisplay
-    filePath="/vue-threejs-display/models/gltf/LittlestTokyo.glb"
+    filePath="/models/gltf/LittlestTokyo.glb"
     :cameraPosition="{ x: 10, y: 700, z: 1000 }"
     :enableDraco="true"
     outputEncoding="sRGB"

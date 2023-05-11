@@ -2,7 +2,7 @@
   <vueThreejsDisplay
     :rotation="rotation"
     @load="onLoad()"
-    filePath="/vue-threejs-display/models/glb/naixiaodong.glb"
+    filePath="/models/glb/naixiaodong.glb"
     :height="450"
 		:scale="{ x: 0.8, y: 0.8, z: 0.8 }"
     backgroundColor="#F2F2F2"

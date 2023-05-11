@@ -9,7 +9,7 @@ const __dirname = getDirname(import.meta.url)
 const isProd = process.env.NODE_ENV === 'production'
 
 export default defineUserConfig({
-	base: '/vue-threejs-display/',
+	base: '/',
 	title:'vue-threejs-display',
 	description:'基于 Vue + Three.js 的 3D展示组件',
   head,

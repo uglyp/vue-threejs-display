@@ -9,14 +9,14 @@
 ```vue
 <template>
   <vueThreejsDisplay
-    filePath="/vue-threejs-display/models/gltfs/fishingTown/scene.gltf"
+    filePath="/models/gltfs/fishingTown/scene.gltf"
     :cameraPosition="{ x: 0, y: 10, z: 10 }"
     :height="650"
     backgroundColor="#F2F2F2"
   />
 	<h1>添加灯光</h1>
 	<vueThreejsDisplay
-	    filePath="/vue-threejs-display/models/gltfs/fishingTown/scene.gltf"
+	    filePath="/models/gltfs/fishingTown/scene.gltf"
 	    :lights="lights"
 	    :cameraPosition="{ x: 0, y: 10, z: 10 }"
 	    :height="650"

@@ -25,7 +25,7 @@ const loaderList = ref()
 loaderList.value = [
   {
     title: "OBJ+MTL",
-    filePath: "/vue-threejs-display/models/obj/male02/male02.obj",
+    filePath: "/models/obj/male02/male02.obj",
     mtlPath: "",
     showFps: false,
     height: 600,
@@ -35,13 +35,13 @@ loaderList.value = [
   },
   {
     title: "FBX+JPG",
-    filePath: "/vue-threejs-display/models/fbx/stanford-bunny.fbx",
-    textureImage: "/vue-threejs-display/models/fbx/brick.png",
+    filePath: "/models/fbx/stanford-bunny.fbx",
+    textureImage: "/models/fbx/brick.png",
     height: 400,
   },
 ]
 function setMtlOrTextureImage(){
-	loaderList.value[0].mtlPath = "/vue-threejs-display/models/obj/male02/male02.mtl"
+	loaderList.value[0].mtlPath = "/models/obj/male02/male02.mtl"
 }
 function onMouseMove(event, intersected) {
   if (object.value) {

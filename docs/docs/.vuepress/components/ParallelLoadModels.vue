@@ -15,9 +15,9 @@ import { vueThreejsDisplay } from "vue-threejs-display/vue3";
 import { ref } from "vue";
 const filePath = ref();
 filePath.value = [
-  "/vue-threejs-display/models/fbx/Samba Dancing.fbx",
-  "/vue-threejs-display/models/collada/pump/pump.dae",
-  "/vue-threejs-display/models/ply/Lucy100k.ply",
+  "/models/fbx/Samba Dancing.fbx",
+  "/models/collada/pump/pump.dae",
+  "/models/ply/Lucy100k.ply",
 ];
 const position = ref();
 position.value = [

@@ -6,7 +6,7 @@
   </div>
   <div class="content">
     <vueThreejsDisplay
-      filePath="/vue-threejs-display/models/glb/naixiaodong.glb"
+      filePath="/models/glb/naixiaodong.glb"
       backgroundColor="#cccccc"
       :labels="labels"
       :scale="{ x: 0.5, y: 0.5, z: 0.5 }"

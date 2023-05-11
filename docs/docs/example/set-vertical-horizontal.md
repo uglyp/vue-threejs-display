@@ -25,7 +25,7 @@
     </div>
     <vueThreejsDisplay
       v-if="!refresh"
-      filePath="/vue-threejs-display/models/gltfs/telannas/scene.gltf"
+      filePath="/models/gltfs/telannas/scene.gltf"
       :scale="{ x: 0.5, y: 0.5, z: 0.5 }"
       :verticalCtrl="verticalCtrl"
       :horizontalCtrl="horizontalCtrl"

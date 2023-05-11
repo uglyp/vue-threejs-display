@@ -17,8 +17,8 @@ import { vueThreejsDisplay } from "vue-threejs-display/vue3";
 import { ref } from "vue";
 const filePath = ref();
 filePath.value = [
-  // "/vue-threejs-display/models/gltfs/bmw_m6_gt3_shiny__evil/scene.gltf",
-  "/vue-threejs-display/models/gltfs/774ce9b6d7ea4a72a0e2f57b1f0af839/scene.gltf",
+  // "/models/gltfs/bmw_m6_gt3_shiny__evil/scene.gltf",
+  "/models/gltfs/774ce9b6d7ea4a72a0e2f57b1f0af839/scene.gltf",
 ];
 const currentModelIndex = ref();
 const process = ref(0);

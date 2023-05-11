@@ -1,6 +1,6 @@
 <template>
   <vueThreejsDisplay
-    :filePath="'/vue-threejs-display/models/collada/elf/elf.dae'"
+    :filePath="'/models/collada/elf/elf.dae'"
     :cameraPosition="{ x: 0, y: -10, z: 13 }"
     :enableDamping="true"
     :dampingFactor="0.05"

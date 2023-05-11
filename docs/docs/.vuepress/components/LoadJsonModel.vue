@@ -1,6 +1,6 @@
 <template>
   <vueThreejsDisplay
-    filePath="/vue-threejs-display/models/json/lightmap.json"
+    filePath="/models/json/lightmap.json"
     :height="350"
     backgroundColor="#F2F2F2"
   />

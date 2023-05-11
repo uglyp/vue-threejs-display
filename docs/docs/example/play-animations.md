@@ -9,7 +9,7 @@
     {{ autoPlay ? "Play" : "Stop" }}
   </div>
   <vueThreejsDisplay
-    filePath="/vue-threejs-display/models/gltfs/airi/scene.gltf"
+    filePath="/models/gltfs/airi/scene.gltf"
     :cameraPosition="{ x: 0, y: 0, z: 0 }"
     :autoPlay="autoPlay"
     :height="750"

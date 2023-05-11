@@ -2,7 +2,7 @@
   <vueThreejsDisplay
     :rotation="rotation"
     @load="onLoad()"
-    filePath="/vue-threejs-display/models/collada/elf/elf.dae"
+    filePath="/models/collada/elf/elf.dae"
     :height="350"
     backgroundColor="#F2F2F2"
   />

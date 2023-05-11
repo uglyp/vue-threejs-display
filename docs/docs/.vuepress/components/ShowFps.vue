@@ -1,6 +1,6 @@
 <template>
   <vueThreejsDisplay
-    filePath="/vue-threejs-display/models/obj/tree.obj"
+    filePath="/models/obj/tree.obj"
     :height="350"
     backgroundColor="#F2F2F2"
     :showFps="true"

@@ -1,6 +1,6 @@
 <template>
   <vueThreejsDisplay
-    filePath="/vue-threejs-display/models/stl/colored.stl"
+    filePath="/models/stl/colored.stl"
     :height="350"
     backgroundColor="#F2F2F2"
     @load="onLoad"
