@@ -1,4 +1,4 @@
-# 添加文字标注
+# 添加文字标注,设置缩放、旋转限制
 
 :::tip
 支持图片、文字标注
@@ -17,16 +17,24 @@
       filePath="/models/glb/naixiaodong.glb"
       backgroundColor="#cccccc"
       :labels="labels"
-      :scale="{ x: 0.5, y: 0.5, z: 0.5 }"
       outputEncoding="sRGB"
+			:controlsOptions="controlsOptions"
       :height="400"
     />
   </div>
 </template>
 <script setup>
-import { vueThreejsDisplay } from "vue-threejs-display/vue3";
+import { vueThreejsDisplay } from "../../../../packages/vue3/src/index.ts";
 import { ref } from "vue";
 const labels = ref();
+const controlsOptions = ref()
+controlsOptions.value = {
+	minDistance: 0.5,
+	maxDistance: 50，
+	maxPolarAngle: Math.PI / 2,
+	minAzimuthAngle: -Math.PI / 2,
+	maxAzimuthAngle: Math.PI / 2,
+}
 labels.value = [
   // image label
   {
@@ -98,5 +106,5 @@ function resetLabels() {
   height: 500px;
 }
 </style>
-</script>
+
 ```

@@ -333,6 +333,16 @@ function init() {
 
   if (!controls || Object.keys(controls).length <= 0) {
     controls = new OrbitControls(camera, el)
+		// controls.enableDamping = true;
+		// controls.minDistance = 0.5;
+		// controls.maxDistance = 90;
+		// controls.minAzimuthAngle = - Math.PI / 2;
+		// controls.maxAzimuthAngle = Math.PI / 2;
+		// controls.maxPolarAngle = Math.PI / 1.8;
+		// controls.target.set(0, 0.15, - 0.2);
+
+		// controls.target.set(0, 0.5, 0);
+		// controls.update();
     if (enableDamping) {
       controls.enableDamping = true
       if (dampingFactor != undefined) {

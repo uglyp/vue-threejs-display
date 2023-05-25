@@ -8,7 +8,6 @@
     :cameraPosition="{ x: 0, y: 0, z: 0 }"
     :autoPlay="autoPlay"
     :height="650"
-    backgroundColor="#F2F2F2"
   />
 </template>
 <script setup>
